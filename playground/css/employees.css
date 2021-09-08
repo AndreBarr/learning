@@ -1,0 +1,9 @@
+.employee {
+  border: 1px solid black;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: lightgray;
+  height: 100%;
+  border-radius: 5px;
+}

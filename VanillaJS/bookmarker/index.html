@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Bookmark App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-10 offset-md-1">
+        <h1>Bookmarks</h1>
+        <div class="form-control mb-4 text-center">
+          <h4>Bookmark Your Favorite Sites</h4>
+          <form class="form-group" id="bookmark-form">
+            <label for="siteName">Site Name</label>
+            <br />
+            <input
+              type="text"
+              id="site-name"
+              class="mb-4"
+              placeholder="Enter site name..."
+            />
+            <br />
+            <label for="siteUrl">Site URL</label>
+            <br />
+            <input
+              type="text"
+              id="site-url"
+              class="mb-4"
+              placeholder="Enter site url..."
+            />
+            <br />
+            <input type="submit" class="btn btn-primary" value="Submit" />
+          </form>
+        </div>
+        <div id="bookmarks"></div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

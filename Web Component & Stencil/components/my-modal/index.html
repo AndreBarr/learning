@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="modal.js"></script>
+    <title>Web Components Modal</title>
+  </head>
+  <body>
+    <button onclick="handleClick()">Show Modal</button>
+    <sf-modal>
+      Header?
+      <p slot="content">Content!</p>
+    </sf-modal>
+  </body>
+  <script>
+    function handleClick() {
+      const modal = document.querySelector("sf-modal");
+
+      modal.hasAttribute("is-visible")
+        ? modal.removeAttribute("is-visible")
+        : modal.setAttribute("is-visible", "");
+    }
+  </script>
+</html>

@@ -1,0 +1,61 @@
+• Knowledge of design systems and how they work
+• Testing Frameworks
+• Knowledge of WCAG guidelines and how to implement them
+• Familiar with testing libs and frameworks such as Puppeteer and Jest
+
+The following is a list of nice to have skills but not required:
+
+• Familiar with Stencil and/or Ionic frameworks
+• Familiar with JSX
+• Experience with CSS custom properties
+• Familiar with concourse
+
+-----------------------------------------------------------------
+
+• Familiar with component based architecture
+• Familiar with web components
+• Shadow DOM  
+• Competence with HTML and CSS3
+	- Flexbox
+	- CSS Selectors
+	- CSS Box Model
+	- CSS preprocessors (SCSS, Less, etc)
+• Experience with at least one of the following frameworks:
+	- Angular
+	- Ember
+	- Vue
+	- React
+• Competence with Typescript and Javascript
+• Pseudo classes and pseudo elements
+• Specificity
+• Accessibility
+
+-----------------------------------------------------------------
+
+Links
+
+http://thatjsdude.com/interview/css.html#float
+
+https://performancejs.com/post/hde6d32/The-Best-Frontend-JavaScript-Interview-Questions-(Written-by-a-Frontend-Engineer
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+
+https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor
+
+https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM
+
+https://developer.mozilla.org/en-US/docs/Web/Web_Components
+
+https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
+
+https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
+
+https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript
+
+https://developer.mozilla.org/en-US/docs/Learn/Accessibility/What_is_accessibility
+
+https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML
+
+https://developer.mozilla.org/en-US/docs/Web/Accessibility
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements

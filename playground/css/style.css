@@ -1,0 +1,35 @@
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  align-content: space-between;
+}
+
+.box {
+  background-color: lightgreen;
+}
+
+@media (max-width: 500px) {
+  .dashboard {
+    display: block;
+  }
+}
+
+employee-card {
+  width: 30%;
+}
+
+.container > .box1 {
+  background: slateblue;
+}
+
+.container {
+  background: skyblue;
+}
+
+.container .box2 {
+  background: var(--main-bg-color);
+}
+
+:root {
+  --main-bg-color: black;
+}

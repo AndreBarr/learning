@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin-top: 70px;
+        background: #333333;
+        color: #fff;
+      }
+    </style>
+    <title>Weight Converter</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1 class="display-4 text-center mb-3">Weight Converter</h1>
+          <form>
+            <div class="form-group">
+              <input
+                id="input"
+                type="number"
+                class="form-control form-control-lg"
+                placeholder="Enter Pounds..."
+              />
+            </div>
+          </form>
+          <div class="offset-1">
+            <div class="form-check form-check-inline mb-2">
+              <input
+                type="radio"
+                class="form-check-input"
+                name="inlineRadioOptions"
+                id="pounds"
+              />
+              <label for="pounds" class="form-check-label">Pounds</label>
+            </div>
+            <div class="form-check form-check-inline mb-2">
+              <input
+                type="radio"
+                class="form-check-input"
+                name="inlineRadioOptions"
+                id="grams"
+              />
+              <label for="grams" class="form-check-label">Grams</label>
+            </div>
+            <div class="form-check form-check-inline mb-2">
+              <input
+                type="radio"
+                class="form-check-input"
+                name="inlineRadioOptions"
+                id="kiloGrams"
+              />
+              <label for="kiloGrams" class="form-check-label">Kilograms</label>
+            </div>
+            <div class="form-check form-check-inline mb-2">
+              <input
+                type="radio"
+                class="form-check-input"
+                name="inlineRadioOptions"
+                id="ounces"
+              />
+              <label for="ounces" class="form-check-label">Ounces</label>
+            </div>
+          </div>
+          <div class="output">
+            <div class="card bg-danger mb-2">
+              <div class="card-body">
+                <h4>Pounds:</h4>
+                <div id="lbOutput"></div>
+              </div>
+            </div>
+            <div class="card bg-primary mb-2">
+              <div class="card-body">
+                <h4>Grams:</h4>
+                <div id="gOutput"></div>
+              </div>
+            </div>
+            <div class="card bg-success mb-2">
+              <div class="card-body">
+                <h4>Kilograms:</h4>
+                <div id="kgOutput"></div>
+              </div>
+            </div>
+            <div class="card bg-danger mb-2">
+              <div class="card-body">
+                <h4>Ounces:</h4>
+                <div id="ozOutput"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelector(".output").style.display = "none";
+      document.querySelector("#input").addEventListener("input", (e) => {
+        const radioOption = getRadioOption();
+        displayValues(radioOption, e.target.value);
+      });
+
+      document.querySelector(".col-md-6").addEventListener("click", (e) => {
+        if (e.target.type === "radio") {
+          document.querySelector("#input");
+          const radioOption = getRadioOption();
+          displayValues(radioOption, document.querySelector("#input").value);
+        }
+      });
+
+      function getRadioOption() {
+        const radio = document.querySelectorAll("input[type='radio']");
+        let radioOption;
+        radio.forEach((input) => {
+          if (input.checked) {
+            radioOption = input.id;
+          }
+        });
+        return radioOption;
+      }
+
+      function displayValues(radioOption, value) {
+        if (radioOption === "pounds") {
+          convertPounds(value);
+        } else if (radioOption === "grams") {
+          convertGrams(value);
+        } else if (radioOption === "kiloGrams") {
+          convertKiloGrams(value);
+        } else if (radioOption === "ounces") {
+          convertOunces(value);
+        } else {
+          const error = document.createElement("div");
+          error.className = "alert alert-danger text-center";
+          error.innerHTML = "Please select a unit";
+          document
+            .querySelector(".col-md-6")
+            .insertBefore(error, document.querySelector(".output"));
+
+          setTimeout(() => error.remove(), 3000);
+          return;
+        }
+        document.querySelector(".output").style.display = "";
+      }
+
+      function convertPounds(lbs) {
+        document.querySelector("#lbOutput").innerHTML = lbs;
+        document.querySelector("#gOutput").innerHTML = lbs / 0.0022046;
+        document.querySelector("#kgOutput").innerHTML = lbs / 2.2046;
+        document.querySelector("#ozOutput").innerHTML = lbs * 16;
+      }
+
+      function convertGrams(grams) {
+        document.querySelector("#lbOutput").innerHTML = grams * 0.0022046;
+        document.querySelector("#gOutput").innerHTML = grams;
+        document.querySelector("#kgOutput").innerHTML = grams / 1000;
+        document.querySelector("#ozOutput").innerHTML = grams * 16 * 0.0022046;
+      }
+
+      function convertKiloGrams(kgs) {
+        document.querySelector("#lbOutput").innerHTML = kgs * 2.2046;
+        document.querySelector("#gOutput").innerHTML = kgs * 1000;
+        document.querySelector("#kgOutput").innerHTML = kgs;
+        document.querySelector("#ozOutput").innerHTML = kgs * 16 * 2.2046;
+      }
+
+      function convertOunces(ozs) {
+        document.querySelector("#lbOutput").innerHTML = ozs / 16;
+        document.querySelector("#gOutput").innerHTML = ozs / 16 / 0.0022046;
+        document.querySelector("#kgOutput").innerHTML = ozs / 16 / 2.2046;
+        document.querySelector("#ozOutput").innerHTML = ozs;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+gapi.loaded_2(function(_){var window=this;
+/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+_.jj=function(a,b){b||(b={});var c=window;var d=a instanceof _.Ob?a:_.yd("undefined"!=typeof a.href?a.href:String(a))||_.Pb;a=b.target||a.target;var e=[];for(f in b)switch(f){case "width":case "height":case "top":case "left":e.push(f+"="+b[f]);break;case "target":case "noopener":case "noreferrer":break;default:e.push(f+"="+(b[f]?1:0))}var f=e.join(",");_.tc()&&c.navigator&&c.navigator.standalone&&a&&"_self"!=a?(f=_.ce("A"),_.Cd(f,d),f.setAttribute("target",a),b.noreferrer&&f.setAttribute("rel","noreferrer"),
+b=document.createEvent("MouseEvent"),b.initMouseEvent("click",!0,!0,c,1),f.dispatchEvent(b),c={}):b.noreferrer?(c=_.Dd("",c,a,f),b=_.td(d),c&&(_.Ac&&_.Jb(b,";")&&(b="'"+b.replace(/'/g,"%27")+"'"),c.opener=null,b='<meta name="referrer" content="no-referrer"><meta http-equiv="refresh" content="0; url='+_.Jd(b)+'">',b=_.lc(b,null),(d=c.document)&&d.write&&(d.write(_.kc(b)),d.close()))):(c=_.Dd(d,c,a,f))&&b.noopener&&(c.opener=null);return c};
+
+_.vT=function(){var a=_.Yb;return!!a&&0<=a.indexOf("CriOS")};_.wT=function(){var a=_.Yb;return!!a&&0<=a.indexOf("iPhone")&&0<=a.indexOf("Safari")&&-1==a.indexOf("CriOS")};_.xT=function(a,b){var c=/^https:\/\/([^\/]+\.google\.com)\//.exec(a);c&&-1!=["plus.google.com","plus.sandbox.google.com"].indexOf(c[1])&&(b=b||{},b.noreferrer=!0,(a=_.jj(a,b))&&a.focus())};
+
+var yT,zT;
+(function(){var a=null,b=null,c={0:"comments"};c[1]={href:[_.In],view_type:[null],query:[null],width:[null],pinned_comment:[null],owner_id:[null],first_party_property:[null],legacy_comment_moderation_url:[null]};var d=function(g,k,l){var m=_.Vd(document,b),n=_.cs(m).y;k&&_.wT()&&(n-=60);m=_.mr().height;var q=_.or(document).y;g=n+g;if(g<q||g>q+m||l)l=g,k&&(l-=m),_.nr(document).scrollTop=l};c[3]={onfirsttimeplusonepromo:!0,onallcommentsclicked:!0,onfirsttimecommenter:!0,onhidefirsttimecommenterpromo:!0,ontimestampclicked:!0,
+onshareboxopen:!0,onshownotification:!0,onthumbsup:!0,onupgradeaccount:!0,scroll:function(){return d},openwindow:function(){return _.vT()?_.xT:void 0}};var e=function(){if(b){var g=document.getElementById(b);g&&g.parentNode&&g.parentNode.parentNode&&(g.style.width=g.parentNode.parentNode.offsetWidth+"px")}},f=function(){a&&(a.Ca&&a.Ca(),b=a=null,window.removeEventListener?window.removeEventListener("resize",e):window.detachEvent&&window.detachEvent("onresize",e))};c[5]=function(g,k){"e"==g&&(f(),
+a=k[5],b=a.ka(),window.addEventListener?window.addEventListener("resize",e):window.attachEvent&&window.attachEvent("onresize",e))};_.Ap(c);yT=f;zT=function(g){a.send("createComment",{content:g},null,_.ym)}})();_.M("gapi.comments.createComment",zT);_.M("gapi.comments.dispose",yT);
+
+});
+// Google Inc.
