@@ -1,7 +1,8 @@
 const template = document.createElement("template");
 template.innerHTML = `
   <link rel="stylesheet" href="style.css">
-  <div class="modal-content">
+  <div id="backdrop"></div>
+  <div id="modal-content">
     <h1><slot>Default Header</slot></h1>
     <p><slot name="content">Default</slot></p>
   </div>
@@ -21,34 +22,37 @@ class Modal extends HTMLElement {
   }
 
   connectedCallback() {
-    if (this.hasAttribute("isVisible")) {
-      this._isVisbile = true;
-    }
-    this._render();
+    // if (this.hasAttribute("isVisible")) {
+    //   this._isVisbile = true;
+    // }
+    // this.shadowRoot
+    //   .querySelector("#backdrop")
+    //   .addEventListener("click", (ev) => {
+    //     this._isVisbile = false;
+    //     this.style.display = "none";
+    //   });
+    // this._render();
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "is-visible") {
-      this._isVisbile = newValue !== null ? true : false;
-    }
+  // attributeChangedCallback(name, oldValue, newValue) {
+  //   if (name === "is-visible") {
+  //     this._isVisbile = newValue !== null ? true : false;
+  //   }
 
-    this._render();
-  }
+  //   this._render();
+  // }
 
-  static get observedAttributes() {
-    return ["is-visible"];
-  }
+  // static get observedAttributes() {
+  //   return ["is-visible"];
+  // }
 
-  _render() {
-    let modalContent = this.shadowRoot.querySelector(".modal-content");
-    if (this._isVisbile) {
-      this.parentElement.style.background = "rgba(0, 0, 0, 0.5)";
-      modalContent.style.display = "block";
-    } else {
-      this.parentElement.style.background = "white";
-      modalContent.style.display = "none";
-    }
-  }
+  // _render() {
+  //   if (this._isVisbile) {
+  //     this.style.display = "block";
+  //   } else {
+  //     this.style.display = "none";
+  //   }
+  // }
 }
 
 customElements.define("sf-modal", Modal);

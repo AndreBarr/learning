@@ -1,14 +1,33 @@
-* {
-  margin: auto;
-  height: 50%;
-  width: 50%;
-  padding: 1rem 1rem;
+:host([is-visible]) #backdrop,
+:host([is-visible]) #modal-content {
+  opacity: 1;
+  pointer-events: all;
 }
 
-.modal-content {
+#backdrop {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal-content {
+  position: fixed;
+  top: 15vh;
+  left: 25%;
+  width: 50%;
   border: black solid 1px;
-  background-color: white;
+  background: white;
+  border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(196, 179, 179, 0.8);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
 }
 
 h1 {

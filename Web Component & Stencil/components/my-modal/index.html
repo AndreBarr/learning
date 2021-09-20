@@ -17,10 +17,7 @@
   <script>
     function handleClick() {
       const modal = document.querySelector("sf-modal");
-
-      modal.hasAttribute("is-visible")
-        ? modal.removeAttribute("is-visible")
-        : modal.setAttribute("is-visible", "");
+      modal.setAttribute("is-visible", "");
     }
   </script>
 </html>
