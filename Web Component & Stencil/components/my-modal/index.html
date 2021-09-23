@@ -10,14 +10,14 @@
   <body>
     <button onclick="handleClick()">Show Modal</button>
     <sf-modal>
-      Header?
+      <h1 slot="title">Header</h1>
       <p slot="content">Content!</p>
     </sf-modal>
   </body>
   <script>
     function handleClick() {
       const modal = document.querySelector("sf-modal");
-      modal.setAttribute("is-visible", "");
+      modal.open();
     }
   </script>
 </html>
