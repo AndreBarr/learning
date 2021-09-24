@@ -1,4 +1,6 @@
 const template = document.createElement("template");
+// On first load modal content transitions, issue is with linking the style sheet
+// instead of having the css in the template directly
 template.innerHTML = `
   <link rel="stylesheet" href="style.css">
   <div id="backdrop"></div>
