@@ -1,12 +1,16 @@
 * {
   margin: 0;
-  color: #fff;
-  font-family: sans-serif;
+}
+
+:root {
+  --header-font-size: 40px;
 }
 
 html,
 body {
   height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
 }
 
 body {
@@ -14,6 +18,7 @@ body {
 }
 
 .main-header {
+  display: flex;
   position: relative;
   box-sizing: border-box;
   width: 100%;
@@ -21,18 +26,20 @@ body {
   transition: all 1s ease;
   background-image: linear-gradient(90deg, blue, #fff, blue);
   background-size: 200%;
-  color: #fff;
-  font-size: 40px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--header-font-size);
+  font-weight: bold;
 }
 
 .main-header > .content {
-  color: inherit;
-  padding: 5%;
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
 }
 
 .main-header:hover,
 .main-header:hover > .header-border {
-  color: blue;
+  color: rgba(0, 0, 255, 0.75);
   background-position: -100%;
 }
 
@@ -47,7 +54,6 @@ body {
 }
 
 .nav-bar {
-  background-color: rgba(0, 0, 0, 0.25);
   height: 5%;
   padding: 15px;
 }
@@ -63,19 +69,68 @@ body {
 }
 
 .nav-item {
+  position: relative;
   width: 10%;
   padding: 5px;
   box-sizing: border-box;
   text-decoration: none;
   text-align: center;
   transition: all 0.25s ease;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  transition: all 0.25s ease;
   background-image: linear-gradient(90deg, red, blue);
   background-size: 0% 3px;
   background-repeat: no-repeat;
-  background-position: left bottom;
 }
 
-.nav-item:hover {
+.left {
+  position: absolute;
+  bottom: 0;
+  width: 3px;
+  height: 100%;
+  transition: all 0.25s ease;
+  background-image: linear-gradient(red, blue);
+  background-size: 3px 0%;
+  background-repeat: no-repeat;
+  background-position-y: 100%;
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 3px;
+  height: 100%;
+  transition: all 0.25s ease;
+  background-image: linear-gradient(blue, red);
+  background-size: 3px 0%;
+  background-repeat: no-repeat;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  transition: all 0.25s ease;
+  background-image: linear-gradient(90deg, blue, red);
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: 100%;
+}
+.nav-item:hover > .top,
+.nav-item:hover > .bottom {
   background-size: 100% 3px;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-item:hover > .left,
+.nav-item:hover > .right {
+  background-size: 3px 100%;
 }
