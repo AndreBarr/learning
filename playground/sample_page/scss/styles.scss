@@ -30,6 +30,7 @@ body {
   color: rgba(255, 255, 255, 0.75);
   font-size: var(--header-font-size);
   font-weight: bold;
+  box-shadow: 0px 0px 1rem rgba($color: gray, $alpha: 0.75);
 }
 
 .main-header {
@@ -79,7 +80,7 @@ body {
 .top {
   @include nav-item-border;
   top: 0;
-  width: 100%;
+  width: calc(100% - 8px);
   height: 3px;
   background-image: linear-gradient(90deg, red, blue);
   background-size: 0% 3px;
@@ -88,7 +89,7 @@ body {
 .bottom {
   @include nav-item-border;
   bottom: 0;
-  width: 100%;
+  width: calc(100% - 8px);
   height: 3px;
   background-image: linear-gradient(90deg, blue, red);
   background-size: 0% 3px;
@@ -97,7 +98,7 @@ body {
 
 .left {
   @include nav-item-border;
-  bottom: 0;
+  top: 0;
   width: 3px;
   height: 100%;
   background-image: linear-gradient(red, blue);
@@ -108,17 +109,20 @@ body {
 .right {
   @include nav-item-border;
   top: 0;
-  right: -5px;
+  right: 3px;
   width: 3px;
   height: 100%;
   background-image: linear-gradient(blue, red);
   background-size: 3px 0%;
 }
 
+.nav-item:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .nav-item:hover .top,
 .nav-item:hover .bottom {
   background-size: 100% 3px;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .nav-item:hover .left,
