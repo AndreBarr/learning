@@ -4,12 +4,13 @@
 
 :root {
   --header-font-size: 40px;
+  --font-family: Arial, Helvetica, sans-serif;
 }
 
 html,
 body {
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family);
   color: #fff;
 }
 
@@ -31,26 +32,17 @@ body {
   font-weight: bold;
 }
 
-.main-header > .content {
-  display: flex;
-  align-items: center;
-  padding-left: 5rem;
+.main-header {
+  .content {
+    display: flex;
+    align-items: center;
+    padding-left: 5rem;
+  }
 }
 
-.main-header:hover,
-.main-header:hover > .header-border {
+.main-header:hover {
   color: rgba(0, 0, 255, 0.75);
   background-position: -100%;
-}
-
-.header-border {
-  position: absolute;
-  transition: all 1s ease;
-  bottom: 0;
-  width: 100%;
-  height: 5px;
-  background-image: linear-gradient(90deg, #fff, blue, #fff);
-  background-size: 200%;
 }
 
 .nav-bar {
@@ -75,6 +67,7 @@ body {
   text-decoration: none;
   text-align: center;
   transition: all 0.25s ease;
+  padding: 5px;
 }
 
 @mixin nav-item-border {
@@ -85,7 +78,6 @@ body {
 
 .top {
   @include nav-item-border;
-  // transition-delay: 0.45s;
   top: 0;
   width: 100%;
   height: 3px;
@@ -95,7 +87,6 @@ body {
 
 .bottom {
   @include nav-item-border;
-  // transition-delay: 0.15s;
   bottom: 0;
   width: 100%;
   height: 3px;
@@ -106,7 +97,6 @@ body {
 
 .left {
   @include nav-item-border;
-  // transition-delay: 0s;
   bottom: 0;
   width: 3px;
   height: 100%;
@@ -117,38 +107,37 @@ body {
 
 .right {
   @include nav-item-border;
-  // transition-delay: 0.3s;
   top: 0;
-  right: 0;
+  right: -5px;
   width: 3px;
   height: 100%;
   background-image: linear-gradient(blue, red);
   background-size: 3px 0%;
 }
 
-.nav-item:hover > .top,
-.nav-item:hover > .bottom {
+.nav-item:hover .top,
+.nav-item:hover .bottom {
   background-size: 100% 3px;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.nav-item:hover > .left,
-.nav-item:hover > .right {
+.nav-item:hover .left,
+.nav-item:hover .right {
   background-size: 3px 100%;
 }
 
-.nav-item:hover > .top {
+.nav-item:hover .top {
   transition-delay: 0s;
 }
 
-.nav-item:hover > .bottom {
+.nav-item:hover .bottom {
   transition-delay: 0.3s;
 }
 
-.nav-item:hover > .left {
+.nav-item:hover .left {
   transition-delay: 0.45s;
 }
 
-.nav-item:hover > .right {
+.nav-item:hover .right {
   transition-delay: 0.15s;
 }
