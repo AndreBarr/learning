@@ -1,0 +1,95 @@
+$border-size: 3px;
+
+:host {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0.25rem;
+}
+
+button {
+  position: relative;
+  font-size: inherit;
+  display: block;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 0.25rem 0.5rem;
+}
+
+@mixin btn-border {
+  position: absolute;
+  transition: all 0.25s ease;
+  background-repeat: no-repeat;
+}
+
+.top {
+  @include btn-border;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $border-size;
+  background-image: linear-gradient(90deg, red, blue);
+  background-size: 0% $border-size;
+}
+
+.bottom {
+  @include btn-border;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: $border-size;
+  background-image: linear-gradient(90deg, blue, red);
+  background-size: 0% $border-size;
+  background-position: 100%;
+}
+
+.left {
+  @include btn-border;
+  top: 0;
+  left: 0;
+  width: $border-size;
+  height: 100%;
+  background-image: linear-gradient(red, blue);
+  background-size: $border-size 0%;
+  background-position-y: 100%;
+}
+
+.right {
+  @include btn-border;
+  top: 0;
+  right: 0;
+  width: $border-size;
+  height: 100%;
+  background-image: linear-gradient(blue, red);
+  background-size: $border-size 0%;
+}
+
+.btn:hover {
+  color: rgba(255, 255, 255, 0.5);
+
+  .top,
+  .bottom {
+    background-size: 100% $border-size;
+  }
+
+  .left,
+  .right {
+    background-size: $border-size 100%;
+  }
+
+  .top {
+    transition-delay: 0s;
+  }
+
+  .bottom {
+    transition-delay: 0.3s;
+  }
+
+  .left {
+    transition-delay: 0.45s;
+  }
+
+  .right {
+    transition-delay: 0.15s;
+  }
+}

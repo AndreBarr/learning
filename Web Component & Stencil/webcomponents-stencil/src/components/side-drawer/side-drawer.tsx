@@ -45,15 +45,15 @@ export class SideDrawer {
       <aside>
         <header>
           <h1>{this.header}</h1>
-          <button onClick={() => this.onCloseDrawer()}>X</button>
+          <uc-button onClick={() => this.onCloseDrawer()}>X</uc-button>
         </header>
         <section id="tabs">
-          <button class={!this.showContactInfo ? 'active' : ''} onClick={() => this.onContentChange('nav')}>
+          <uc-button borderAnimation class={!this.showContactInfo ? 'active' : ''} onClick={() => this.onContentChange('nav')}>
             Navigation
-          </button>
-          <button class={this.showContactInfo ? 'active' : ''} onClick={() => this.onContentChange('contact')}>
+          </uc-button>
+          <uc-button borderAnimation class={this.showContactInfo ? 'active' : ''} onClick={() => this.onContentChange('contact')}>
             Contact
-          </button>
+          </uc-button>
         </section>
         <main>{mainContent}</main>
       </aside>,

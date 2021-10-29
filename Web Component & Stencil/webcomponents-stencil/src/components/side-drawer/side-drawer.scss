@@ -11,8 +11,15 @@ aside {
   z-index: 100;
 }
 
-:host([opened]) aside {
-  left: 0;
+:host([opened]) {
+  aside {
+    left: 0;
+  }
+
+  .backdrop {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
 
 header {
@@ -21,52 +28,53 @@ header {
   position: relative;
 }
 
-header h1 {
-  font-size: 1.5rem;
-  color: white;
-  margin: 0;
-}
+header {
+  h1 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+  }
 
-header button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1rem;
-  color: white;
-  background: transparent;
-  font-size: 1.5rem;
-  border: none;
-}
-
-header button:focus {
-  outline: none;
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    color: white;
+    background: transparent;
+    font-size: 1.5rem;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 #tabs {
   display: flex;
   justify-content: center;
   margin: 1rem 0;
-}
 
-#tabs button {
-  width: 30%;
-  background: white;
-  color: black;
-  text-align: center;
-  border: 1px solid black;
-  font: inherit;
-  padding: 0.15rem 0;
-}
+  button {
+    width: 30%;
+    background: white;
+    color: black;
+    text-align: center;
+    border: 1px solid black;
+    font: inherit;
+    padding: 0.15rem 0;
 
-#tabs button.active,
-#tabs button:hover,
-#tabs button:active {
-  background: black;
-  color: white;
-}
+    &.active,
+    &:hover,
+    &:active {
+      background: black;
+      color: white;
+    }
 
-#tabs button:focus {
-  outline: none;
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 #contact-information {
@@ -84,9 +92,4 @@ header button:focus {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease-out;
-}
-
-:host([opened]) .backdrop {
-  opacity: 1;
-  pointer-events: all;
 }

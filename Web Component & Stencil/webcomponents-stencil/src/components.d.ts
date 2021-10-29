@@ -6,10 +6,16 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface UcButton {
+        "borderAnimation": boolean;
+    }
     interface UcSideDrawer {
         "header": string;
         "open": () => Promise<void>;
         "opened": boolean;
+    }
+    interface UcStockPrice {
+        "stockSymbol": string;
     }
     interface UcTooltip {
         "tooltipContent": string;
@@ -17,11 +23,23 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLUcButtonElement extends Components.UcButton, HTMLStencilElement {
+    }
+    var HTMLUcButtonElement: {
+        prototype: HTMLUcButtonElement;
+        new (): HTMLUcButtonElement;
+    };
     interface HTMLUcSideDrawerElement extends Components.UcSideDrawer, HTMLStencilElement {
     }
     var HTMLUcSideDrawerElement: {
         prototype: HTMLUcSideDrawerElement;
         new (): HTMLUcSideDrawerElement;
+    };
+    interface HTMLUcStockPriceElement extends Components.UcStockPrice, HTMLStencilElement {
+    }
+    var HTMLUcStockPriceElement: {
+        prototype: HTMLUcStockPriceElement;
+        new (): HTMLUcStockPriceElement;
     };
     interface HTMLUcTooltipElement extends Components.UcTooltip, HTMLStencilElement {
     }
@@ -30,21 +48,31 @@ declare global {
         new (): HTMLUcTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "uc-button": HTMLUcButtonElement;
         "uc-side-drawer": HTMLUcSideDrawerElement;
+        "uc-stock-price": HTMLUcStockPriceElement;
         "uc-tooltip": HTMLUcTooltipElement;
     }
 }
 declare namespace LocalJSX {
+    interface UcButton {
+        "borderAnimation"?: boolean;
+    }
     interface UcSideDrawer {
         "header"?: string;
         "opened"?: boolean;
+    }
+    interface UcStockPrice {
+        "stockSymbol"?: string;
     }
     interface UcTooltip {
         "tooltipContent"?: string;
         "tooltipOpened"?: boolean;
     }
     interface IntrinsicElements {
+        "uc-button": UcButton;
         "uc-side-drawer": UcSideDrawer;
+        "uc-stock-price": UcStockPrice;
         "uc-tooltip": UcTooltip;
     }
 }
@@ -52,7 +80,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "uc-button": LocalJSX.UcButton & JSXBase.HTMLAttributes<HTMLUcButtonElement>;
             "uc-side-drawer": LocalJSX.UcSideDrawer & JSXBase.HTMLAttributes<HTMLUcSideDrawerElement>;
+            "uc-stock-price": LocalJSX.UcStockPrice & JSXBase.HTMLAttributes<HTMLUcStockPriceElement>;
             "uc-tooltip": LocalJSX.UcTooltip & JSXBase.HTMLAttributes<HTMLUcTooltipElement>;
         }
     }
